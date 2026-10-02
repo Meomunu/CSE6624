@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Registration</title>
+</head>
+<body>
+
+    <header>
+        <h1>Workshop Registration</h1>
+        <p>Register for a web programming workshop.</p>
+    </header>
+
+    <main>
+
+        <h2>Workshop Information</h2>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Workshop</th>
+                    <th>Day</th>
+                    <th>Time</th>
+                    <th>Room</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>HTML Basics</td>
+                    <td>Monday</td>
+                    <td>15:00</td>
+                    <td>GUK714</td>
+                </tr>
+                <tr>
+                    <td>CSS Basics</td>
+                    <td>Tuesday</td>
+                    <td>16:00</td>
+                    <td>GUK714</td>
+                </tr>
+                <tr>
+                    <td>JavaScript Basics</td>
+                    <td>Wednesday</td>
+                    <td>17:00</td>
+                    <td>GUK714</td>
+                </tr>
+                <tr>
+                    <td>Web Project</td>
+                    <td>Thursday</td>
+                    <td>15:30</td>
+                    <td>GUK714</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Registration</h2>
+
+        <form method="get" action="#">
+
+            <p>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </p>
+
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <fieldset>
+                <legend>Year of study</legend>
+
+                <label>
+                    <input type="radio" name="year" value="1" required>
+                    1
+                </label>
+
+                <label>
+                    <input type="radio" name="year" value="2">
+                    2
+                </label>
+
+                <label>
+                    <input type="radio" name="year" value="3">
+                    3
+                </label>
+            </fieldset>
+
+            <p>
+                <label for="track">Preferred track:</label>
+
+                <select id="track" name="track">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">JavaScript</option>
+                </select>
+            </p>
+
+            <p>
+                <label>
+                    <input type="checkbox" name="agree" required>
+                    I agree to the club rules
+                </label>
+            </p>
+
+            <button type="submit">Register</button>
+
+        </form>
+
+    </main>
+
+    <footer>
+        CSE6624 · Meirzhan Seitkhan · Lab 04
+    </footer>
+
+</body>
+</html>
