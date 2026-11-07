@@ -1,13 +1,28 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS</title>
-    <script src="script.js" defer></script>
+    <title>Lab 10</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>kqfhklajlfjaslkfnkjsaklfj</h1>
-    <button id="myButton">Нажми</button>
+
+    <h1>Tip Calculator</h1>
+
+    <input id="bill" type="number" placeholder="Bill amount">
+    <input id="tip" type="number" placeholder="Tip %">
+    <button onclick="calc()">Calculate</button>
+    <p id="result"></p>
+
+    <h1>Grade Average</h1>
+
+    <input id="g1" type="number" placeholder="Grade 1">
+    <input id="g2" type="number" placeholder="Grade 2">
+    <input id="g3" type="number" placeholder="Grade 3">
+    <button onclick="avg()">Calculate average</button>
+    <p id="output"></p>
+
+    <script src="main.js"></script>
 </body>
 </html>
