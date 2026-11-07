@@ -19,5 +19,5 @@ btn.addEventListener("click", function () {
     const total = bill + tipAmount;
 
     out.textContent = "Tip: " + tipAmount.toFixed(2) +
-        " | Total: " + total.toFixed(2);
+        "Total: " + total.toFixed(2);
 });
