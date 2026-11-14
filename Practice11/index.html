@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus Clubs</title>
+    <style>
+        body {
+            background: #f5f8f1;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .box {
+            background: #646881;
+            color: white;
+            width: 300px;
+            margin: 80px auto;
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1>Campus Clubs</h1>
+    <ul id="list"></ul>
+</div>
+
+<script>
+const clubs = [
+    { name: "Robotics", room: "GUK201" },
+    { name: "Debate", room: "GUK105" },
+    { name: "Web Club", room: "GUK714" }
+];
+
+const list = document.getElementById("list");
+
+function renderClubs(items) {
+    list.innerHTML = "";
+
+    for (const club of items) {
+        let li = document.createElement("li");
+        li.textContent = club.name + " - " + club.room;
+        list.appendChild(li);
+    }
+}
+
+renderClubs(clubs);
+console.table(clubs);
+</script>
+
+</body>
+</html>
