@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus Clubs</title>
+    <style>
+        body {
+            background: #f5f8f1;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .box {
+            background: #646881;
+            color: white;
+            width: 300px;
+            margin: 80px auto;
+            padding: 25px;
+        }
+
+        input {
+            padding: 10px;
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1>Campus Clubs</h1>
+    <input id="q" placeholder="Filter by name">
+    <ul id="list"></ul>
+</div>
+
+<script>
+const clubs = [
+    { name: "Robotics", room: "GUK201" },
+    { name: "Debate", room: "GUK105" },
+    { name: "Web Club", room: "GUK714" },
+    { name: "Music", room: "GUK302" },
+    { name: "Programming", room: "GUK401" }
+];
+
+const list = document.getElementById("list");
+const qEl = document.getElementById("q");
+
+function renderClubs(items) {
+    list.innerHTML = "";
+
+    for (const club of items) {
+        let li = document.createElement("li");
+        li.textContent = club.name + " - " + club.room;
+        list.appendChild(li);
+    }
+}
+
+qEl.addEventListener("input", function() {
+    const q = qEl.value.toLowerCase();
+
+    const filtered = clubs.filter(function(c) {
+        return c.name.toLowerCase().includes(q);
+    });
+
+    renderClubs(filtered);
+});
+
+renderClubs(clubs);
+console.table(clubs);
+</script>
+
+</body>
+</html>
