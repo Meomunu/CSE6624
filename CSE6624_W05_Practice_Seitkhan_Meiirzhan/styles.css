@@ -1,0 +1,27 @@
+y {
+ margin: 0;
+ font-family: Georgia, "Times New Roman", serif;
+ background: #f7fafc;
+ color: #1a202c;
+}
+.top {
+ background: #1a365d;
+ color: #fff;
+ padding: 1rem 1.25rem;
+}
+.nav a {
+ color: #bee3f8;
+ text-decoration: none;
+ margin-right: 1rem;
+}
+header .nav a {
+ font-weight: bold;
+}
+.wrap { padding: 1.25rem; }
+.card {
+ background: #fff;
+ border: 2px solid #2b6cb0;
+ padding: 1rem;
+ margin-bottom: 0.75rem;
+ border-radius: 8px;
+}
