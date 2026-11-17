@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>community</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        body {
+            background: #f5f8f1;
+            color: #252525;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: hsl(92, 65%, 40%);
+        }
+
+        .page-section {
+            min-height: 75vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page-box {
+            width: 320px;
+            min-height: 320px;
+            background: hsl(92, 65%, 40%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 35px;
+            text-align: center;
+            color: white;
+            transition: transform 0.5s ease;
+        }
+
+        .page-box h1 {
+            font-size: 36px;
+        }
+
+        .page-box p {
+            font-size: 16px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            font-size: 13px;
+        }
+
+        .survey-section {
+            display: flex;
+            justify-content: center;
+            padding: 20px 20px;
+        }
+
+        .survey-box {
+            width: 100%;
+            max-width: 670px;
+            background: rgb(255, 255, 255);
+            padding: 35px;
+            border: 4px solid hsl(92, 65%, 40%);
+        }
+
+        .survey-box label {
+            font-weight: 700;
+        }
+
+        .survey-box select,
+        .survey-box textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            background: #f5f8f1;
+            font-size: 15px;
+            border-radius: 10px;
+        }
+
+        .survey-box textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .survey-box button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 13px;
+            border: none;
+            background: hsl(92, 65%, 40%);
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .survey-box button:hover {
+            background: #42a2d9;
+        }
+
+        #success {
+            color: #6A994E;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="community.html">Community</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-section">
+            <div class="page-box">
+                <h1>Community.</h1>
+                <p>
+                    Connect with others, share your experiences, and offer support.
+                </p>
+            </div>
+        </section>
+
+        <section class="survey-section">
+            <div class="survey-box">
+                <p>
+                    Everyone needs support!!!
+                </p>
+
+                <form id="survey">
+
+                    <label for="topic">
+                        1. What are you struggling with?
+                    </label>
+
+                    <select id="topic" required>
+                        <option value="">Choose a topic</option>
+                        <option>Discipline</option>
+                        <option>Education</option>
+                        <option>Relationships</option>
+                        <option>Stress and anxiety</option>
+                        <option>Self-confidence</option>
+                        <option>Other</option>
+                    </select>
+
+                    <label for="mood">
+                        2. How are you feeling today?
+                    </label>
+
+                    <select id="mood" required>
+                        <option value="">Choose your mood</option>
+                        <option>Great)))</option>
+                        <option>Good))</option>
+                        <option>Normal)</option>
+                        <option>Not very well(</option>
+                        <option>I'm struggling((((</option>
+                    </select>
+
+                    <label for="support">
+                        3. What kind of support do you need?
+                    </label>
+
+                    <select id="support" required>
+                        <option value="">Choose support</option>
+                        <option>Someone to listen</option>
+                        <option>Motivation</option>
+                        <option>Meeting people with similar experiences</option>
+                    </select>
+
+                    <label for="message">
+                        4. Would you like to share anything else?
+                    </label>
+
+                    <textarea id="message" placeholder="Write your thoughts here..."></textarea>
+
+                    <button type="submit">
+                        Send
+                    </button>
+
+                    <p id="success"></p>
+
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>CSE6624 Meiirzhan Seitkhan 081011552746 niche-13</p>
+    </footer>
+
+    <script>
+        emailjs.init({
+            publicKey: "KZ2fogq2wiUg5p-y6"
+        });
+
+        const form = document.getElementById("survey");
+        const success = document.getElementById("success");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            success.textContent = "Sending...";
+
+            emailjs.send("service_vs1h1ak", "template_xpvfdy3", {
+                to_email: "meurhzanovseitkhanov@gmail.com",
+                topic: document.getElementById("topic").value,
+                mood: document.getElementById("mood").value,
+                support: document.getElementById("support").value,
+                message: document.getElementById("message").value
+            })
+            .then(function() {
+                success.textContent = "Thank you! Your response was sent.";
+                form.reset();
+            })
+            .catch(function(error) {
+                success.textContent = "Error sending response. Please try again.";
+                console.log(error);
+            });
+        });
+
+        let angle = 0;
+        const box = document.querySelector(".page-box");
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "ArrowRight") angle += 90;
+            if (event.key === "ArrowLeft") angle -= 90;
+
+            box.style.transform = `rotateZ(${angle}deg)`;
+        });
+    </script>
+
+</body>
+</html>
