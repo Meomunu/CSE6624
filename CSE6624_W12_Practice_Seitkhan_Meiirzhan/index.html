@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice 12</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f8f1;
+            text-align: center;
+            padding: 40px;
+        }
+
+        button, input {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        li {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Practice</h1>
+
+    <h2>Counter</h2>
+    <p>Count: <span id="count">0</span></p>
+    <button id="inc">+1</button>
+
+    <h2>My Notes</h2>
+
+    <form id="form">
+        <input id="item" type="text" placeholder="Write a note">
+        <button type="submit">Add</button>
+    </form>
+
+    <ul id="list"></ul>
+
+    <button id="clear">Clear all</button>
+
+    <script>
+        const countEl = document.getElementById("count");
+
+        document.getElementById("inc").addEventListener("click", function() {
+            countEl.textContent = Number(countEl.textContent) + 1;
+        });
+
+        const form = document.getElementById("form");
+        const item = document.getElementById("item");
+        const list = document.getElementById("list");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const text = item.value.trim();
+            if (!text) return;
+
+            const li = document.createElement("li");
+            li.textContent = text;
+            list.appendChild(li);
+
+            item.value = "";
+            item.focus();
+        });
+
+        document.getElementById("clear").addEventListener("click", function() {
+            list.innerHTML = "";
+        });
+    </script>
+
+</body>
+</html>
