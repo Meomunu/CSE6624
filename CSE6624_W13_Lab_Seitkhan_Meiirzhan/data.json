@@ -1,0 +1,18 @@
+
+[
+    {
+        "id": 1,
+        "title": "Library",
+        "blurb": "A quiet place to study."
+    },
+    {
+        "id": 2,
+        "title": "Cafeteria",
+        "blurb": "A place to relax after classes."
+    },
+    {
+        "id": 3,
+        "title": "GUK714",
+        "blurb": "Our CSE6624 classroom."
+    }
+]
