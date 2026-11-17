@@ -1,0 +1,15 @@
+* { box-sizing: border-box; }
+main {
+ max-width: 900px;
+ margin: 0 auto;
+ padding: 1rem;
+}
+.layout .panel {
+ border: 1px solid #cbd5e0;
+ padding: 1.25rem;
+ margin-bottom: 1rem;
+ background: #fff;
+}
+.layout .panel:hover {
+ background: #ebf8ff;
+}
