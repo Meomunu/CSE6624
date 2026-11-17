@@ -202,3 +202,16 @@ footer {
     border: none;
     cursor: pointer;
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #dd6b20;
+    outline-offset: 3px;
+}
