@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        body {
+            background: #f5f8f1;
+            color: #252525;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: hsl(105, 55%, 50%);
+        }
+
+        .page-section {
+            min-height: 75vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page-box {
+            width: 320px;
+            min-height: 320px;
+            background: hsl(105, 55%, 50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 35px;
+            text-align: center;
+            color: white;
+            transition: transform 0.5s ease;
+        }
+
+        .page-box h1 {
+            font-size: 36px;
+        }
+
+        .page-box p {
+            font-size: 16px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            font-size: 13px;
+        }
+
+        .section {
+            display: flex;
+            justify-content: center;
+        }
+
+        .box {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .box h2 {
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .box p {
+            text-align: center;
+        }
+
+        .items {
+            background: white;
+            margin-bottom: 12px;
+            border: 1px solid hsl(105, 55%, 50%);
+            padding: 20px 20px;
+        }
+
+        .items summary {
+            font-size: 16px;
+            font-weight: 670;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .items p {
+            color: #746c6c;
+            font-size: 15px; 
+        }
+
+        .items summary:hover {
+            color: hsl(105, 55%, 50%);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="community.html">Community</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-section">
+            <div class="page-box">
+                <h1>About.</h1>
+                <p>
+                    Learn about our mission to bring people together.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+
+            <div class="box">
+
+                <h2>Frequently Asked Questions</h2>
+
+                <details class="items">
+                    <summary>Who can join the community?</summary>
+                    <p>
+                        Everyone who wants to connect with others,
+                        share experiences, or support someone is welcome.
+                        You don't need any special experience to join.
+                    </p>
+                </details>
+
+                <details class="items">
+                    <summary>How can I get support?</summary>
+                    <p>
+                        You can choose a topic, complete our questionnaire,
+                        and tell us what kind of support you are looking for.
+                        You can also connect with people who have similar experiences.
+                    </p>
+                </details>
+
+                <details class="items">
+                    <summary>How can I become part of the community?</summary>
+                    <p>
+                        Visit our Community page and join us.
+                        You can participate, listen to others,
+                        share your experience, and offer support.
+                    </p>
+                </details>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>CSE6624 Meiirzhan Seitkhan 081011552746 niche-13</p>
+    </footer>
+    <script>
+    let angle = 0;
+    const box = document.querySelector(".page-box");
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "ArrowRight") angle += 90;
+        if (event.key === "ArrowLeft") angle -= 90;
+
+        box.style.transform = `rotateZ(${angle}deg)`;
+    });
+    </script>
+
+</body>
+</html>
